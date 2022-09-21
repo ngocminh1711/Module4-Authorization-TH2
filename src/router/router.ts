@@ -8,6 +8,7 @@ import multer from 'multer';
 import {auth} from "../middleware/auth";
 import {ProductModel} from "../schemas/product.model";
 import {UserModel} from "../schemas/user.model";
+import passport from "passport";
 
 const upload = multer();
 
@@ -108,6 +109,6 @@ router.post('/product/create', async (req:any, res) => {
     catch (err) {
         res.json({ err: err.message })
     }
-})
+});
 export default router;
 

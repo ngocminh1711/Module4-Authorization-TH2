@@ -1,18 +1,49 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model } from "mongoose";
+
 
 
 interface IUser {
+
     username: string;
+
     password: string;
-    role: string;
+
+    google: {
+
+        id: {
+
+            type: string,
+
+        },
+
+    }
+
 }
 
+
+
 const userSchema = new Schema<IUser>({
+
+    google: {
+
+        id: {
+
+            type: String
+
+        }
+
+    },
+
     username: String,
-    password: String,
-    role: String,
+
+    password: String
+
 })
 
+
+
 const UserModel = model<IUser>('User', userSchema);
+
+
 
 export { UserModel };

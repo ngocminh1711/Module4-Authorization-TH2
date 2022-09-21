@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 
 import router from "./src/router/router";
+import authRouter from "./src/router/auth.router";
 
 
 
@@ -33,6 +34,7 @@ mongoose.connect(DB_URL)
 
 
 app.use("/api", router);
+app.use('/auth', authRouter);
 
 
 
